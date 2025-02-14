@@ -5,7 +5,7 @@ import ProductDetails from "./productdetails";
 
 function Products(props) {
   
-console.log('product components')
+  
 
   return (
     <ul className="list-group shadow">

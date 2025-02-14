@@ -18,10 +18,10 @@ function displayCount() {
     return productCount > 0 ? productCount : <h1>0</h1>;
   }
 
-
-let incrementCount =()=>{
-  updateCount(++productCount)
   
+  let incrementCount =()=>{
+    
+    updateCount(++productCount)
 }
 
 let decrementCount = ()=>{
@@ -41,9 +41,9 @@ return(
     <h6 className="font-weight-bold my-2" style={{ marginRight: 30 }}>
        ${props.price}
     </h6>
-    <Buttons eventHandler ={decrementCount}>-</Buttons>
-    <span >{productCount}</span>
-    <Buttons eventHandler={incrementCount}>+</Buttons>
+    <Buttons eventHandler ={decrementCount} disable={productCount == 0}>-</Buttons>
+    <span >{displayCount()}</span>
+    <Buttons eventHandler={incrementCount} disable={productCount ==10} >+</Buttons>
     <span className={badgeClass}>{props.isAvailable ? 'Available' : 'Unavailable'}</span>
   </div>
 
